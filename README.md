@@ -50,4 +50,5 @@ parse
 ### Babylon/Babili
 - Program Flow is important and can be leveraged for optimizations, compression, minimizing. However the level of optimization is based on the amount of knowledge known (types, etc.). Can this be applied to more than just ES6?
 
-## Disclaimer: This is a blameless medium. Focusing on a specific features shortcomings or bias or personal agendas, does not help accomplish this goal. Rather, it will inhibit it, and therefore urge that one uses an unbiased inspection of these tools to help identify ways to create an unopinionated, and extensible foundation for these _featuresets_. 
+## Disclaimer: 
+This is a blameless medium. Focusing on a specific toolings shortcomings or bias or personal agendas, will not help accomplish the aforementioned goal. Therefore I urge that anyone involved uses an unbiased inspection of these tools to help identify ways to create an unopinionated, and extensible foundation.
