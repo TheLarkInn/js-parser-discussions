@@ -11,8 +11,11 @@ Currently there are a variety of JavaScript parsers that are available. Each of 
 - [Acorn](https://github.com/ternjs/acorn)
 - [SweetJS](https://github.com/sweet-js/sweet.js)
 - [Babylon](https://github.com/babel/babylon)
-- [UglifyJS](https://github.com/mishoo/UglifyJS/)
-- [UglifyJS2](https://github.com/mishoo/UglifyJS2)
+- [UglifyJS](https://github.com/mishoo/UglifyJS/) (no dependant parser)
+- [UglifyJS2](https://github.com/mishoo/UglifyJS2) (?)
+- [Typescript](https://github.com/microsoft/typescript)
+- [Flow](https://github.com/facebook/flow) (ml based)
+
 
 Each of these parsers have specific feature set. For this synopsis, the reasonings behind those featuresets are irrelevant, however it is noteworthy to mention that often specific parsers are companions to specific frameworks, libraries, toolings, etc. 
 
