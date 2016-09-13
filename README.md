@@ -1,5 +1,5 @@
 # js-parser-discussions
-Discussions &amp; Collaboration on a Unified/Base set of parser features for JavaScript
+Discussions &amp; Collaboration on a set of parser features for JavaScript for interoperability.
 
 ## Synopsis
 Currently there are a variety of JavaScript parsers that are available. Each of these parsers have specific purposes. These parsers include (but is not limited to): 
@@ -50,3 +50,4 @@ parse
 ### Babylon/Babili
 - Program Flow is important and can be leveraged for optimizations, compression, minimizing. However the level of optimization is based on the amount of knowledge known (types, etc.). Can this be applied to more than just ES6?
 
+## Disclaimer: This is a blameless medium. Focusing on a specific features shortcomings or bias or personal agendas, does not help accomplish this goal. Rather, it will inhibit it, and therefore urge that one uses an unbiased inspection of these tools to help identify ways to create an unopinionated, and extensible foundation for these _featuresets_. 
