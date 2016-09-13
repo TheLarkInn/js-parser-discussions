@@ -16,6 +16,7 @@ Currently there are a variety of JavaScript parsers that are available. Each of 
 - [UglifyJS2](https://github.com/mishoo/UglifyJS2) (?)
 - [Typescript](https://github.com/microsoft/typescript)
 - [Flow](https://github.com/facebook/flow) (ml based)
+- [Shift](https://github.com/shapesecurity/shift-parser-js)
 
 
 Each of these parsers have specific feature set. For this synopsis, the reasonings behind those featuresets are irrelevant, however it is noteworthy to mention that often specific parsers are companions to specific frameworks, libraries, toolings, etc. 
@@ -40,7 +41,7 @@ What if we think of these different parsers as simply a set of features for _a s
 ```
 parse
   |-- event delegation
-  |-- sytnax flagging
+  |-- syntax flagging
   |-- custom estrees(?)/AST's
   |-- typed language support
   |-- (?)
