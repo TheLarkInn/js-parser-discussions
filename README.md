@@ -8,6 +8,7 @@ This is a blameless medium. Focusing on a specific toolings shortcomings or bias
 Currently there are a variety of JavaScript parsers that are available. Each of these parsers have specific purposes. These parsers include (but is not limited to): 
 
 - [Esprima](https://github.com/jquery/esprima)
+- [Espree](https://github.com/eslint/espree)
 - [Acorn](https://github.com/ternjs/acorn)
 - [SweetJS](https://github.com/sweet-js/sweet.js)
 - [Babylon](https://github.com/babel/babylon)
