@@ -7,17 +7,18 @@ This is a blameless medium. Focusing on a specific toolings shortcomings or bias
 ## Synopsis
 Currently there are a variety of JavaScript parsers that are available. Each of these parsers have specific purposes. These parsers include (but is not limited to): 
 
-- [Esprima](https://github.com/jquery/esprima)
-- [Espree](https://github.com/eslint/espree)
-- [Acorn](https://github.com/ternjs/acorn)
-- [SweetJS](https://github.com/sweet-js/sweet.js)
-- [Babylon](https://github.com/babel/babylon)
+- Family of [ESTree](https://github.com/estree/estree):
+    - [SpiderMonkey parser](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Parser_API)
+    - [Esprima](https://github.com/jquery/esprima)
+    - [Acorn](https://github.com/ternjs/acorn)
+      - [Espree](https://github.com/eslint/espree)
+    - [Babylon](https://github.com/babel/babylon)
+    - [Shift](https://github.com/shapesecurity/shift-parser-js)
 - [UglifyJS](https://github.com/mishoo/UglifyJS/) (no dependant parser)
-- [UglifyJS2](https://github.com/mishoo/UglifyJS2) (?)
-- [Typescript](https://github.com/microsoft/typescript)
-- [Flow](https://github.com/facebook/flow) (ml based)
-- [Shift](https://github.com/shapesecurity/shift-parser-js)
-
+- [UglifyJS2 parser](https://github.com/mishoo/UglifyJS2)
+- [Typescript parser](https://github.com/microsoft/typescript)
+- [Traceur parser](https://github.com/google/traceur-compiler)
+- [Flow parser](https://github.com/facebook/flow) (ml based)
 
 Each of these parsers have specific feature set. For this synopsis, the reasonings behind those featuresets are irrelevant, however it is noteworthy to mention that often specific parsers are companions to specific frameworks, libraries, toolings, etc. 
 
