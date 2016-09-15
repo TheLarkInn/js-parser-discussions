@@ -2,6 +2,14 @@
 
 The following is a list of all possible parser features, along with commonly agreed terminology for them.
 
+- [Node location](#node-location)
+- [Token collection](#token-collection)
+- [Comment collection](#comment-collection)
+- [Comment attachment](#comment-attachment)
+- [Event delegation](#event-delegation)
+- [Exported parser class](#exported-parser-class)
+- [Pure tokenization mode](#pure-tokenization-mode)
+
 ## Node Location
 
 Node location refers to the addition of properties to each syntax node to denote the location of the node in the source text.
@@ -209,3 +217,28 @@ Example:
 { start: { line: 1, column: 0, offset: 0 },
   end: { line: 1, column: 5, offset: 5 } }
 ```
+
+## Token Collection
+
+To be written.
+
+## Comment Collection
+
+To be written.
+
+## Comment Attachment
+
+To be written.
+
+## Event Delegation
+
+To be written.
+
+## Exported Parser Class
+
+To be written.
+
+## Pure Tokenization Mode
+
+To be written.
+
