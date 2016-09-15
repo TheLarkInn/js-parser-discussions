@@ -220,7 +220,19 @@ Example:
 
 ## Token Collection
 
-To be written.
+Implemented by: Esprima, Babylon.
+
+Token collection refers to the parser's ability to collect every token discovered during its internal lexical analysis and store them in an array.
+
+Example:
+```js
+> var result = require('esprima').parse('const answer = 42', { tokens: true });
+> result.tokens
+[ { type: 'Keyword', value: 'const' },
+  { type: 'Identifier', value: 'answer' },
+  { type: 'Punctuator', value: '=' },
+  { type: 'Numeric', value: '42' } ]
+```
 
 ## Comment Collection
 
