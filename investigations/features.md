@@ -2,6 +2,14 @@
 
 The following is a list of all possible parser features, along with commonly agreed terminology for them.
 
+- [Node location](#node-location)
+- [Token collection](#token-collection)
+- [Comment collection](#comment-collection)
+- [Comment attachment](#comment-attachment)
+- [Event delegation](#event-delegation)
+- [Exported parser class](#exported-parser-class)
+- [Pure tokenization mode](#pure-tokenization-mode)
+
 ## Node Location
 
 Node location refers to the addition of properties to each syntax node to denote the location of the node in the source text.
@@ -209,3 +217,62 @@ Example:
 { start: { line: 1, column: 0, offset: 0 },
   end: { line: 1, column: 5, offset: 5 } }
 ```
+
+## Token Collection
+
+To be written.
+
+## Comment Collection
+
+Implemented by: Esprima, Traceur parser, Babylon, Flow parser, TypeScript parser.
+
+Comment collection refers to the parser's ability to gather all single-line and multiple-line comments in an array.
+
+Example:
+```js
+> var ast = require('babylon').parse('42 // answer')
+> ast.comments
+[ { type: 'CommentLine',
+    value: ' answer',
+    start: 3,
+    end: 12,
+    loc: SourceLocation { start: [Object], end: [Object] } } ]
+```
+
+## Comment Attachment
+
+Implemented by: Esprima, Babylon, UglifyJS2, TypeScript parser.
+
+Comment attachment refers to the parser's ability to attach every comment to the closest syntax node. Since a node can precede or follow a comment, it has to refer to both, usually denoted as `leadingComments` and `trailingComments` arrays, respectively.
+
+**Warning**: Currently, there is no unified standard algorithm for comment attachment. Each parser has a different approach to determine the anchor node where a comment is attached to.
+
+Example:
+```js
+> var ast = require('esprima').parse('42 // answer', { attachComment: true })
+> ast.body[0].expression
+Literal {
+  type: 'Literal',
+  value: 42,
+  raw: '42',
+  trailingComments: [ { type: 'Line', value: ' answer', range: [Object] } ] }
+```
+
+References:
+* [TypeScript syntax trivia](https://github.com/Microsoft/TypeScript/wiki/Architectural-Overview#trivia) and comment attachment
+* Esprima comment attachment implementation: [comment-handler.ts](https://github.com/jquery/esprima/blob/master/src/comment-handler.ts)
+
+**Note**: In UglifyJS2, the comment is attached in the `comments_before` array, a property of a `start` or an `end` token.
+
+## Event Delegation
+
+To be written.
+
+## Exported Parser Class
+
+To be written.
+
+## Pure Tokenization Mode
+
+To be written.
+
