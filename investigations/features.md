@@ -224,11 +224,45 @@ To be written.
 
 ## Comment Collection
 
-To be written.
+Implemented by: Esprima, Traceur parser, Babylon, Flow parser, TypeScript parser.
+
+Comment collection refers to the parser's ability to gather all single-line and multiple-line comments in an array.
+
+Example:
+```js
+> var ast = require('babylon').parse('42 // answer')
+> ast.comments
+[ { type: 'CommentLine',
+    value: ' answer',
+    start: 3,
+    end: 12,
+    loc: SourceLocation { start: [Object], end: [Object] } } ]
+```
 
 ## Comment Attachment
 
-To be written.
+Implemented by: Esprima, Babylon, UglifyJS2, TypeScript parser.
+
+Comment attachment refers to the parser's ability to attach every comment to the closest syntax node. Since a node can precede or follow a comment, it has to refer to both, usually denoted as `leadingComments` and `trailingComments` arrays, respectively.
+
+**Warning**: Currently, there is no unified standard algorithm for comment attachment. Each parser has a different approach to determine the anchor node where a comment is attached to.
+
+Example:
+```js
+> var ast = require('esprima').parse('42 // answer', { attachComment: true })
+> ast.body[0].expression
+Literal {
+  type: 'Literal',
+  value: 42,
+  raw: '42',
+  trailingComments: [ { type: 'Line', value: ' answer', range: [Object] } ] }
+```
+
+References:
+* [TypeScript syntax trivia](https://github.com/Microsoft/TypeScript/wiki/Architectural-Overview#trivia) and comment attachment
+* Esprima comment attachment implementation: [comment-handler.ts](https://github.com/jquery/esprima/blob/master/src/comment-handler.ts)
+
+**Note**: In UglifyJS2, the comment is attached in the `comments_before` array, a property of a `start` or an `end` token.
 
 ## Event Delegation
 
