@@ -286,5 +286,17 @@ To be written.
 
 ## Pure Tokenization Mode
 
-To be written.
+Implemented by: Esprima, Acorn.
 
+In this mode, the parser utilizes its (internal) tokenizer to perform a lexical analysis on the source text without running the complete parsing process. The result is a list of tokens. The source text does not need to represent a syntactically valid program.
+
+Example:
+```js
+> require('esprima').tokenize('const answer = 42')
+[ { type: 'Keyword', value: 'const' },
+  { type: 'Identifier', value: 'answer' },
+  { type: 'Punctuator', value: '=' },
+  { type: 'Numeric', value: '42' } ]
+```
+
+**Note**: Without a parser, it is challenging to [distinguish](http://stackoverflow.com/questions/38846887/distinguishing-regexes-from-a-slash-division-in-a-javascript-files-with-node-j/) a forward slash (`/`) from being a division operator (e.g. `1/2`) or as a part of a regular expression (e.g. `/[0-9]+/g`). With only a pure tokenizer, this is possible by implementing the algorithm described in [Sweeten your JavaScript: hygienic macros for ES5](https://users.soe.ucsc.edu/~cormac/papers/dls14a.pdf) (DLS '14).
