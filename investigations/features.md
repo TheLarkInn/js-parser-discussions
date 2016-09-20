@@ -6,6 +6,7 @@ The following is a list of all possible parser features, along with commonly agr
 - [Token collection](#token-collection)
 - [Comment collection](#comment-collection)
 - [Comment attachment](#comment-attachment)
+- [Language versioning](#language-versioning)
 - [Event delegation](#event-delegation)
 - [Exported parser class](#exported-parser-class)
 - [Pure tokenization mode](#pure-tokenization-mode)
@@ -275,6 +276,31 @@ References:
 * Esprima comment attachment implementation: [comment-handler.ts](https://github.com/jquery/esprima/blob/master/src/comment-handler.ts)
 
 **Note**: In UglifyJS2, the comment is attached in the `comments_before` array, a property of a `start` or an `end` token.
+
+## Language Versioning
+
+Implemented by: Acorn
+
+Language versioning refers to the parser's ability to distinguish the syntax of a number of different ECMAScript editions.
+
+Example:
+```js
+> require('acorn').parse('x={y,z}', { ecmaVersion: 5 })
+SyntaxError: Unexpected token (1:4)
+
+> require('acorn').parse('x={y,z}', { ecmaVersion: 6 })
+Node {
+  type: 'Program',
+  start: 0,
+  end: 7,
+  body: 
+   [ Node {
+       type: 'ExpressionStatement',
+       start: 0,
+       end: 7,
+       expression: [Object] } ],
+  sourceType: 'script' }
+```
 
 ## Event Delegation
 
