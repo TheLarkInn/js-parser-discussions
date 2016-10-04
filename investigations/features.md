@@ -304,7 +304,38 @@ Node {
 
 ## Event Delegation
 
-To be written.
+Implemented by: Acorn, Esprima.
+
+Event delegation refers to the parser's ability to invoke a callback when a certain event is fired.
+
+**Note**: There is no single standard as to the types of event which can be bound to a callback function.
+
+Example with Acorn:
+```javascript
+> function showToken(t) { console.log(t.type.label, ':', t.value) }
+> require('acorn').parse('answer = 42', { onToken: showToken });
+name : answer
+= : =
+num : 42
+eof : undefined
+```
+
+Example with Esprima:
+```javascript
+> require('esprima').parse('42', {}, function(n) { console.log(n) })
+Literal { type: 'Literal', value: 42, raw: '42' }
+ExpressionStatement {
+  type: 'ExpressionStatement',
+  expression: Literal { type: 'Literal', value: 42, raw: '42' } }
+Program {
+  type: 'Program',
+  body: [ ExpressionStatement { type: 'ExpressionStatement', expression: [Object] } ],
+  sourceType: 'script' }
+Program {
+  type: 'Program',
+  body: [ ExpressionStatement { type: 'ExpressionStatement', expression: [Object] } ],
+  sourceType: 'script' }
+```
 
 ## Exported Parser Class
 
